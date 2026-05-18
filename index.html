@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito Hover - Capitã Marvel</title>
+    <style>
+        /* Configuração do corpo da página e o background solicitado */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #d41e31, #491f8f);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Container da imagem para controlar o efeito de sombra/brilho */
+        .container-imagem {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        /* Estilização da imagem */
+        .container-imagem img {
+            max-width: 400px;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            /* Filtro inicial (um pouco mais suave antes do hover) */
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+            transition: all 0.4s ease-in-out;
+        }
+
+        /* === O EFEITO MOMENTO HOVER (Passar o mouse) === */
+        
+        /* 1. Faz o container inclinar ou crescer levemente */
+        .container-imagem:hover {
+            transform: scale(1.05);
+        }
+
+        /* 2. Aplica um efeito de super brilho (glow) dourado/neon na imagem */
+        .container-imagem:hover img {
+            filter: drop-shadow(0 0 25px #f1b814) brightness(1.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-imagem">
+        <img src="1.png" alt="Capitã Marvel">
+    </div>
+
+</body>
+</html>
